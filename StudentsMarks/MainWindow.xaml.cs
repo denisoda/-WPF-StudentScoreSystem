@@ -24,5 +24,15 @@ namespace StudentsMarks
         {
             InitializeComponent();
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void ButtonFind(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
