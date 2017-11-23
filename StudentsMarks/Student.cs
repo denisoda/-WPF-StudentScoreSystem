@@ -1,17 +1,13 @@
 ﻿using System;
+using System.CodeDom;
+using System.IO;
 using System.Text.RegularExpressions;
+using System.Windows;
 
 namespace StudentsMarks
 {
-    public abstract class Student
+    abstract class Student
     {
-        protected string Name
-        {
-            set
-            {
-                Name.Re
-            }
-        }
-
+        
     }
 }

@@ -1,7 +1,8 @@
 ﻿namespace StudentsMarks
 {
-    interface IOperations
+    interface IDBOperations
     {
-        float AverageScore();
+        string ShowAverageScore();
+        string ShowAllStudents();
     }
 }

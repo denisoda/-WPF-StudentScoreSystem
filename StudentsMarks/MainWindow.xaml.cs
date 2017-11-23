@@ -25,14 +25,13 @@ namespace StudentsMarks
             InitializeComponent();
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void ShowAll(object sender, RoutedEventArgs e)
         {
-
-        }
-
-        private void ButtonFind(object sender, RoutedEventArgs e)
-        {
-
+            for (int i = 0; i < 5; i++)
+            {
+             MainBox.AppendText("Test");   
+            }
+            
         }
     }
 }

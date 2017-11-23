@@ -5,11 +5,21 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:StudentsMarks"
         mc:Ignorable="d"
-        Title="Student's marks" Height="500.000" Width="677.222">
-    <Grid Background="{DynamicResource {x:Static SystemColors.InactiveSelectionHighlightTextBrushKey}}">
+        Title="Student's marks" Height="500.000" Width="775" MinWidth="775" MinHeight="500" MaxHeight="500.000" MaxWidth="775">
+    <Grid  Background="{DynamicResource {x:Static SystemColors.MenuTextBrushKey}}">
 
-        <Button Content="Find a student" HorizontalAlignment="Center" Margin="285,406,0,32" Width="75" Click="ButtonFind" RenderTransformOrigin="1.181,0.189"/>
-        <Viewbox HorizontalAlignment="Left" Height="359" Margin="105,20,0,0" VerticalAlignment="Top" Width="433"/>
 
+
+        <Grid>
+            <RichTextBox Margin="146,59,120,106" Width="495" Name="MainBox"/>
+            <TextBlock HorizontalAlignment="Left" Margin="146,10,0,0" TextWrapping="Wrap" Text="MIU group score system" VerticalAlignment="Top" Width="495" Height="37" Foreground="White" FontSize="24" TextAlignment="Center" FontFamily="Segoe UI Semibold"/>
+            <Button Content="Sort by low score " HorizontalAlignment="Left" Height="37" Margin="417,383,0,0" VerticalAlignment="Top" Width="108" x:Name="k"/>
+            <Button Content="Button" HorizontalAlignment="Left" Margin="549,383,0,0" VerticalAlignment="Top" Width="95" Height="37" Background="White" Grid.Row="15"/>
+
+        </Grid>
+        <Button Content="Show all students" HorizontalAlignment="Right" Margin="0,0,510,49" Width="108" Click="ShowAll" RenderTransformOrigin="1.584,0.326" VerticalAlignment="Bottom" Height="37">
+            
+        </Button>
+        <Button Content="Sort by hight score  score" HorizontalAlignment="Left" Height="37" Margin="281,383,0,0" VerticalAlignment="Top" Width="108" Name="ScoreSort" />
     </Grid>
 </Window>

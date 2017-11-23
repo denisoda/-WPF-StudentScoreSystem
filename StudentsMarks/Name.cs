@@ -3,14 +3,14 @@ using System.Windows.Navigation;
 
 namespace StudentsMarks
 {
-    internal class Name:IName
+    public static class _Name
     {
         private static string pattern = @"([A-Z]+[a-z]+\s+[A-Z]+[a-z]+)";
-        private readonly Regex _r = new Regex(pattern);
+        private static readonly Regex R = new Regex(pattern);
 
-        bool IName.RegCheck(string name)
+        public static bool RegCheckNameCheck(string name)
         {
-            return _r.Match(name).Success;
+            return R.Match(name).Success;
         }
     }
 }

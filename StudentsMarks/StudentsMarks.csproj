@@ -55,7 +55,6 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Name.cs" />
-    <Compile Include="IName.cs" />
     <Compile Include="IOperations.cs" />
     <Compile Include="Student.cs" />
     <Page Include="MainWindow.xaml">
