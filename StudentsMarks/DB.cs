@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SQLite;
 using System.Windows;
 using System.Windows.Documents;
@@ -12,24 +13,29 @@ namespace StudentsMarks
         static SQLiteConnection Db = new SQLiteConnection(Path);
         private static List<string> StudentsL = new List<string>();
 
+
         public static List<string> StudentsReturn(string command = @"SELECT * FROM Names")
         {
             try
             {
-                using (Db)
+                using (Db = new SQLiteConnection(Path))
                 {
-                    Db.Open();
+                    if ((Db.State & ConnectionState.Open) == 0)
+                    {
+                        Db.Open();
+                    }
+
                     var commandText = string.Format(command);
                     using (var cmd = new SQLiteCommand(commandText, Db))
                     {
                         using (var rdr = cmd.ExecuteReader())
-                        {
+                        {   
+                            StudentsL.Clear();
+
                             while (rdr.Read())
                             {
-                                StudentsL.Add($"ID: {rdr[0]} Name: {rdr[1]} {rdr[2]} Average Score: {rdr[3]}");
+                                 StudentsL.Add($"ID: {rdr[0]} Name: {rdr[1]} {rdr[2]} Average Score: {rdr[3]}");
                             }
-                            Db.Close();
-
                             return StudentsL;
                         }
                             

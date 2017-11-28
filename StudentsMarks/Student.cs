@@ -7,8 +7,9 @@ using System.Windows;
 
 namespace StudentsMarks
 {
-    abstract class Student
+    abstract class Students
     {
-        public abstract string Show(List<string> students);
+        
     }
+
 }
