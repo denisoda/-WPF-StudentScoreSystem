@@ -11,14 +11,15 @@
 
 
         <Grid>
-            <RichTextBox Margin="146,59,120,106" Width="495" Name="MainBox"/>
+            <TextBox Margin="146,59,120,106" Width="495" Name="MainBox"/>
             <TextBlock HorizontalAlignment="Left" Margin="146,10,0,0" TextWrapping="Wrap" Text="MIU group score system" VerticalAlignment="Top" Width="495" Height="37" Foreground="White" FontSize="24" TextAlignment="Center" FontFamily="Segoe UI Semibold"/>
             <Button Content="Sort by low score " HorizontalAlignment="Left" Height="37" Margin="417,383,0,0" VerticalAlignment="Top" Width="108" x:Name="k"/>
             <Button Content="Button" HorizontalAlignment="Left" Margin="549,383,0,0" VerticalAlignment="Top" Width="95" Height="37" Background="White" Grid.Row="15"/>
 
         </Grid>
-        <Button Content="Show all students" HorizontalAlignment="Right" Margin="0,0,510,49" Width="108" Click="ShowAll" RenderTransformOrigin="1.584,0.326" VerticalAlignment="Bottom" Height="37">
-            
+        <Button HorizontalAlignment="Right" Margin="0,0,510,49" Width="108" Click="ShowAll" Name="BShowAll" RenderTransformOrigin="1.584,0.326" VerticalAlignment="Bottom" Height="37">
+            <TextBlock TextWrapping="Wrap" Text="Show All"/>
+
         </Button>
         <Button Content="Sort by hight score  score" HorizontalAlignment="Left" Height="37" Margin="281,383,0,0" VerticalAlignment="Top" Width="108" Name="ScoreSort" />
     </Grid>

@@ -23,15 +23,19 @@ namespace StudentsMarks
         public MainWindow()
         {
             InitializeComponent();
+            
         }
 
         private void ShowAll(object sender, RoutedEventArgs e)
-        {
-            for (int i = 0; i < 5; i++)
+        {   
+            MainBox.Clear();
+
+            foreach (var I in Database.StudentsReturn())
             {
-             MainBox.AppendText("Test");   
+                MainBox.AppendText($"{I}\n");
             }
-            
+
+            BShowAll.IsEnabled = false;
         }
     }
 }
