@@ -37,5 +37,16 @@ namespace StudentsMarks
 
             BShowAll.IsEnabled = false;
         }
+
+        private void ScoreSort_Click(object sender, RoutedEventArgs e)
+        {
+            MainBox.Clear();
+
+
+            foreach (var I in Database.StudentsReturn("SELECT * FROM Names ORDER BY "))
+            {
+
+            }
+        }   
     }
 }

@@ -26,7 +26,7 @@ namespace StudentsMarks
                         {
                             while (rdr.Read())
                             {
-                                StudentsL.Add($"ID: {rdr[0]} Name: {rdr[1]} {rdr[2]}");
+                                StudentsL.Add($"ID: {rdr[0]} Name: {rdr[1]} {rdr[2]} Average Score: {rdr[3]}");
                             }
                             Db.Close();
 
