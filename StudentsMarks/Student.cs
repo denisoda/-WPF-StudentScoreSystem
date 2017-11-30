@@ -6,16 +6,13 @@ using System.Text.RegularExpressions;
 using System.Windows;
 
 namespace StudentsMarks
-{
+{   
+    
+
      class Students:Database
-    {
-        public int Number;
-
-        Students()
-        {
-
-    }
-
-}
+     {
+         private GetID ID = amound;
+         public static int amound = Database.GetI ;
+     }
 }
 

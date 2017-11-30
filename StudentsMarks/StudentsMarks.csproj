@@ -73,6 +73,7 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="DB.cs" />
+    <Compile Include="Log.cs" />
     <Compile Include="Name.cs" />
     <Compile Include="IOperations.cs" />
     <Compile Include="Student.cs" />

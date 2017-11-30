@@ -7,7 +7,6 @@ namespace StudentsMarks
     {
         private static string pattern = @"([A-Z]+[a-z]+\s+[A-Z]+[a-z]+)";
         private static readonly Regex R = new Regex(pattern);
-
         public static bool RegCheckNameCheck(string name)
         {
             return R.Match(name).Success;
