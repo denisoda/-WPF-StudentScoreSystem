@@ -1,32 +1,37 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Data.Entity.Core.Common.CommandTrees;
 using System.Data.SQLite;
 using System.Windows;
-using System.Windows.Documents;
+
+public delegate string DbComand(string comand);
 
 namespace StudentsMarks
 {
-    internal class Database
+    
+
+    public abstract class Database
     {
-        static readonly string Path = $"Data Source = {System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"..\..\DB\Students.db")}";
-        static SQLiteConnection Db = new SQLiteConnection(Path);
-        private static List<string> StudentsL = new List<string>();
+        public static Delegate Delegatee;
+        private static readonly string Path = $"Data Source = {System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"..\..\DB\Students.db")}";
+        private static SQLiteConnection _db = new SQLiteConnection(Path);
+        private static readonly List<string> StudentsL = new List<string>();
 
+            @"SELECT * FROM Names"
 
-        public static List<string> StudentsReturn(string command = @"SELECT * FROM Names")
+        public static List<string> StudentsReturn(DbComand comand)
         {
             try
             {
-                using (Db = new SQLiteConnection(Path))
-                {
-                    if ((Db.State & ConnectionState.Open) == 0)
+                    _db = new SQLiteConnection(Path);
+                
+                    if ((_db.State & ConnectionState.Open) == 0)
                     {
-                        Db.Open();
+                        _db.Open();
                     }
 
-                    var commandText = string.Format(command);
-                    using (var cmd = new SQLiteCommand(commandText, Db))
+                    using (var cmd = new SQLiteCommand(Convert.ToString(comand), _db))
                     {
                         using (var rdr = cmd.ExecuteReader())
                         {   
@@ -40,8 +45,6 @@ namespace StudentsMarks
                         }
                             
                     }
-                }
-
             }
             catch (Exception e)
             {
@@ -50,5 +53,7 @@ namespace StudentsMarks
             }
 
         }
+
+
     }
 }

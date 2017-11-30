@@ -17,7 +17,9 @@ namespace StudentsMarks
         {   
             MainBox.Clear();
 
-            foreach (var I in Database.StudentsReturn())
+            DbComand Command = comand => "S";
+           
+            foreach (var I in Database.StudentsReturn(Command))
             {
                 MainBox.AppendText($"{I}\n");
             }

@@ -7,9 +7,15 @@ using System.Windows;
 
 namespace StudentsMarks
 {
-    abstract class Students
+     class Students:Database
     {
-        
+        public int Number;
+
+        Students()
+        {
+
     }
 
 }
+}
+

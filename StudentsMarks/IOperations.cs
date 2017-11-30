@@ -1,8 +1,10 @@
-﻿namespace StudentsMarks
+﻿using System.Collections.Generic;
+using System.Data.SQLite;
+
+namespace StudentsMarks
 {
-    interface IDBOperations
+    internal interface ITask
     {
-        string ShowAverageScore();
-        string ShowAllStudents();
+        
     }
 }
