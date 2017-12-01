@@ -17,13 +17,13 @@ namespace StudentsMarks
         private static SQLiteConnection _db = new SQLiteConnection(Path);
         private static readonly List<string> StudentsL = new List<string>();
 
-
         public static List<string> StudentsReturn(string Comand)
         {
             try
             {
                     _db = new SQLiteConnection(Path);
-                
+
+                    
                     if ((_db.State & ConnectionState.Open) == 0)
                     {
                         _db.Open();
@@ -34,8 +34,6 @@ namespace StudentsMarks
                         using (var rdr = cmd.ExecuteReader())
                         {   
                             StudentsL.Clear();
-                            
-                            
                             
                             while (rdr.Read())
                             {

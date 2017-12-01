@@ -11,8 +11,7 @@ namespace StudentsMarks
 
      class Students:Database
      {
-         private GetID ID = amound;
-         public static int amound = Database.GetI ;
+         public static long Number = 0;
      }
 }
 

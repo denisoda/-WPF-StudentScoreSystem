@@ -7,12 +7,13 @@ namespace StudentsMarks
 {   
     
 
-    class Log:ILog
-    {   List<string> LoG = new List<string>();
-        public delegate string Log_(string text);
+    class Log:INterface
+    {
+        List<string> LoG = new List<string>();
+        public delegate string Log_();
         private readonly string Path;
 
-        bool ILog.Log(Log_ text)
+        bool INterface.LoG(string text)
         {
             var open = File.Open(Environment.CurrentDirectory, FileMode.Create);
 
