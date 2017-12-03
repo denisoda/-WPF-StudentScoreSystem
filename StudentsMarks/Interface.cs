@@ -10,4 +10,9 @@ namespace StudentsMarks
     {
        bool LoG(string text);
     }
+
+    interface IDB
+    {
+        int GetNumOfId();
+    }
 }

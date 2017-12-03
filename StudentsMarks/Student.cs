@@ -11,7 +11,7 @@ namespace StudentsMarks
 
      class Students:Database
      {
-         public static long Number = 0;
+         public static long Number;
      }
 }
 

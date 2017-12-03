@@ -5,7 +5,7 @@ namespace StudentsMarks
 {
     public static class _Name
     {
-        private static string pattern = @"([A-Z]+[a-z]+\s+[A-Z]+[a-z]+)";
+        private static readonly string pattern = @"([A-Z]+[a-z]+\s+[A-Z]+[a-z]+)";
         private static readonly Regex R = new Regex(pattern);
         public static bool RegCheckNameCheck(string name)
         {

@@ -4,6 +4,7 @@ using System.Data.SQLite;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Documents;
+using System.Threading;
 
 namespace StudentsMarks
 {
@@ -12,6 +13,7 @@ namespace StudentsMarks
     /// </summary>
     public partial class MainWindow : Window
     {
+
 
         private static List<string> ListFormat(object rdr, List<string> L)
         {
@@ -25,11 +27,11 @@ namespace StudentsMarks
         public MainWindow()
         {
             InitializeComponent();
-            
+
         }
 
         private void ShowAll(object sender, RoutedEventArgs e)
-        {   
+        {
             MainBox.Clear();
 
 
@@ -62,16 +64,7 @@ namespace StudentsMarks
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            MainBox.Clear();
-
-            foreach (var I in Database.StudentsReturn("SELECT * FROM Names ORDER BY ID"))
-            {
-                MainBox.AppendText($"{I}\n");
-            }
-        }
-
-        private void TextBox_TextChanged(object sender, System.Windows.Controls.TextChangedEventArgs e)
-        {
+            
         }
     }
 }

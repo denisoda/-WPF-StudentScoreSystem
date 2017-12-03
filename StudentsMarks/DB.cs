@@ -11,7 +11,7 @@ namespace StudentsMarks
 {
     
 
-    public abstract class Database
+    public abstract class Database:IDB
     {
         private static readonly string Path = $"Data Source = {System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"..\..\DB\Students.db")}";
         private static SQLiteConnection _db = new SQLiteConnection(Path);
@@ -34,7 +34,7 @@ namespace StudentsMarks
                         using (var rdr = cmd.ExecuteReader())
                         {   
                             StudentsL.Clear();
-                            
+
                             while (rdr.Read())
                             {
                                 StudentsL.Add($"ID: {rdr[0]} Name: {rdr[1]} {rdr[2]} Average Score: {rdr[3]} ");
@@ -51,6 +51,10 @@ namespace StudentsMarks
 
         }
 
+        public int GetNumOfId()
+        {
 
+            return 0;
+        }
     }
 }
