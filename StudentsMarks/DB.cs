@@ -22,7 +22,6 @@ namespace StudentsMarks
             try
             {
                     _db = new SQLiteConnection(Path);
-
                     
                     if ((_db.State & ConnectionState.Open) == 0)
                     {
